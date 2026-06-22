@@ -1,0 +1,6 @@
+Copyright (c) 2026 Manuel Zumaquero Pérez. Todos los derechos reservados.
+
+Este código, diseño, estructura y su contenido son propiedad exclusiva de Manuel Zumaquero Pérez. 
+No se autoriza la reproducción, copia, distribución, modificación, uso comercial 
+o hacerse pasar por el autor utilizando este sitio web o su contenido sin el 
+permiso expreso y por escrito del propietario.
