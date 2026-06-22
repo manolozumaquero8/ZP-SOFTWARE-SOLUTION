@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZP Software Solutions · Software a Medida para Empresas</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            navy:   { DEFAULT: '#0f172a', 800: '#1e293b', 700: '#334155' },
+            brand:  { DEFAULT: '#1e3a8a', light: '#2563eb', pale: '#dbeafe' },
+            slate:  { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 400: '#94a3b8', 500: '#64748b', 700: '#334155' },
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="antialiased">
+
+<!-- ════════════════════════════════════════════════════════
+     1. NAVBAR
+════════════════════════════════════════════════════════ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/60">
+  <nav class="max-w-7xl mx-auto px-5 xl:px-8 h-16 flex items-center justify-between gap-6">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2 shrink-0">
+      <span class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
+        </svg>
+      </span>
+      <span class="text-navy font-800 text-base tracking-tight font-extrabold">ZP<span class="text-brand"> Software Solutions</span></span>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-700">
+      <li><a href="#servicios"  class="hover:text-brand transition-colors">Servicios</a></li>
+      <li><a href="#portfolio"  class="hover:text-brand transition-colors">Casos de Éxito</a></li>
+      <li><a href="#tecnologia" class="hover:text-brand transition-colors">Tecnología</a></li>
+      <li><a href="#contacto"   class="hover:text-brand transition-colors">Contacto</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-3">
+      <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 bg-brand text-white text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-brand-light transition-colors shadow-sm">
+        Solicitar Demo
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+        </svg>
+      </a>
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="md:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100" aria-label="Abrir menú">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-200 px-5 py-4 space-y-3">
+    <a href="#servicios"  class="block text-sm font-medium text-slate-700 hover:text-brand" onclick="closeMobileMenu()">Servicios</a>
+    <a href="#portfolio"  class="block text-sm font-medium text-slate-700 hover:text-brand" onclick="closeMobileMenu()">Casos de Éxito</a>
+    <a href="#tecnologia" class="block text-sm font-medium text-slate-700 hover:text-brand" onclick="closeMobileMenu()">Tecnología</a>
+    <a href="#contacto"   class="block text-sm font-medium text-slate-700 hover:text-brand" onclick="closeMobileMenu()">Contacto</a>
+    <a href="#contacto"   class="inline-flex items-center gap-2 bg-brand text-white text-sm font-semibold px-4 py-2.5 rounded-lg w-full justify-center mt-2" onclick="closeMobileMenu()">Solicitar Demo</a>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════════════════════
+     2. HERO
+════════════════════════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+  <!-- Diagonal background -->
+  <div class="hero-accent"></div>
+
+  <!-- Decorative grid -->
+  <div class="absolute inset-0 z-0 opacity-30"
+       style="background-image: radial-gradient(circle, #94a3b8 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 xl:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Copy -->
+    <div>
+      <span class="eyebrow">Software empresarial a medida</span>
+      <h1 class="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.08] tracking-tight text-navy mb-6">
+        Automatizamos y digitalizamos la gestión de tu negocio
+        <span class="text-brand"> con software a medida.</span>
+      </h1>
+      <p class="text-slate-500 text-lg leading-relaxed max-w-xl mb-10">
+        Construimos sistemas robustos, seguros y eficientes diseñados específicamente para los procesos de tu empresa. Sin soluciones genéricas. Sin limitaciones de terceros.
+        <strong class="text-slate-700 font-semibold">Control total, desde el primer día.</strong>
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#servicios" class="inline-flex items-center gap-2 bg-navy text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-navy-800 transition-colors shadow-md">
+          Ver Servicios
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+        <a href="#contacto" class="inline-flex items-center gap-2 border border-brand text-brand font-semibold px-6 py-3.5 rounded-lg hover:bg-brand-pale transition-colors">
+          Agendar Consultoría
+        </a>
+      </div>
+
+      <!-- Social proof stats -->
+      <div class="mt-14 flex flex-wrap gap-8">
+        <div>
+          <p class="text-3xl font-extrabold text-navy">+15</p>
+          <p class="text-sm text-slate-500 font-medium mt-0.5">Proyectos entregados</p>
+        </div>
+        <div class="w-px bg-slate-200"></div>
+        <div>
+          <p class="text-3xl font-extrabold text-navy">100%</p>
+          <p class="text-sm text-slate-500 font-medium mt-0.5">Código propietario</p>
+        </div>
+        <div class="w-px bg-slate-200"></div>
+        <div>
+          <p class="text-3xl font-extrabold text-navy">0</p>
+          <p class="text-sm text-slate-500 font-medium mt-0.5">Licencias de terceros</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero visual -->
+    <div class="hidden lg:flex justify-center items-center">
+      <div class="relative w-full max-w-md">
+        <!-- Main card -->
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-6">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Panel de Control</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-400 shadow-sm shadow-green-300"></span>
+          </div>
+          <!-- Fake metrics -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-3">
+              <span class="text-sm text-slate-600">Usuarios activos</span>
+              <span class="font-bold text-brand">248</span>
+            </div>
+            <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-3">
+              <span class="text-sm text-slate-600">Procesos automatizados</span>
+              <span class="font-bold text-brand">97%</span>
+            </div>
+            <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-3">
+              <span class="text-sm text-slate-600">Tiempo ahorrado / semana</span>
+              <span class="font-bold text-green-600">+12 h</span>
+            </div>
+            <div class="flex items-center justify-between bg-brand-pale rounded-lg px-4 py-3">
+              <span class="text-sm font-semibold text-brand">Eficiencia operativa</span>
+              <span class="font-extrabold text-brand">↑ 34%</span>
+            </div>
+          </div>
+          <!-- Progress bar -->
+          <div class="mt-5">
+            <div class="flex justify-between text-xs text-slate-400 mb-1.5">
+              <span>Migración de datos</span><span>89%</span>
+            </div>
+            <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+              <div class="h-2 bg-brand rounded-full" style="width: 89%"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badge -->
+        <div class="absolute -bottom-5 -left-6 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
+          <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+          <div>
+            <p class="text-xs font-semibold text-navy">Sistema desplegado</p>
+            <p class="text-xs text-slate-400">En producción · Sin incidencias</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════
+     3. SERVICIOS
+════════════════════════════════════════════════════════ -->
+<section id="servicios" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 xl:px-8">
+
+    <!-- Header -->
+    <div class="max-w-2xl mb-16">
+      <span class="eyebrow">Lo que construimos</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-navy leading-tight mb-4">
+        Servicios diseñados para resolver problemas reales
+      </h2>
+      <p class="text-slate-500 text-base leading-relaxed">
+        Cada empresa tiene sus propias ineficiencias. Nuestro trabajo es identificarlas, diseñar la solución exacta y entregarte un sistema que trabaje por ti.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Servicio 1 -->
+      <div class="card-lift bg-slate-50 border border-slate-200 rounded-2xl p-8 relative overflow-hidden group">
+        <div class="absolute top-0 left-0 w-1 h-full bg-brand rounded-l-2xl"></div>
+        <div class="w-12 h-12 bg-brand-pale rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-navy mb-3">Desarrollo de Software a Medida</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+          Diseñamos e implementamos herramientas de gestión interna, ERPs y flujos de trabajo automatizados adaptados al 100% a la operativa de tu empresa. Sin módulos que no usas. Sin costes de licencia.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Gestión interna y ERPs propios</li>
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Automatización de procesos repetitivos</li>
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Integraciones con sistemas existentes</li>
+        </ul>
+      </div>
+
+      <!-- Servicio 2 -->
+      <div class="card-lift bg-slate-50 border border-slate-200 rounded-2xl p-8 relative overflow-hidden group">
+        <div class="absolute top-0 left-0 w-1 h-full bg-brand rounded-l-2xl"></div>
+        <div class="w-12 h-12 bg-brand-pale rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-navy mb-3">Sistemas de Gestión Empresarial y Educativa</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+          Plataformas centralizadas que eliminan el caos de las hojas de cálculo y el papeleo. Gestión de roles, control de registros y acceso a datos en tiempo real para que tomes decisiones con información fiable.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Centralización de datos operativos</li>
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Control de flujos de trabajo</li>
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Gestión de roles y permisos</li>
+        </ul>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="card-lift bg-slate-50 border border-slate-200 rounded-2xl p-8 relative overflow-hidden group">
+        <div class="absolute top-0 left-0 w-1 h-full bg-brand rounded-l-2xl"></div>
+        <div class="w-12 h-12 bg-brand-pale rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-navy mb-3">Arquitectura de Datos y Backends Robustos</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+          La capa invisible que mantiene todo funcionando. Diseñamos arquitecturas seguras, bases de datos eficientes y APIs que soportan el crecimiento de tu negocio sin comprometer la integridad de tus datos.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Seguridad y cifrado de datos</li>
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> Bases de datos optimizadas</li>
+          <li class="flex items-center gap-2"><span class="text-brand font-bold">→</span> APIs REST escalables</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════
+     4. CASOS DE ÉXITO / PORTAFOLIO
+════════════════════════════════════════════════════════ -->
+<section id="portfolio" class="py-24 bg-slate-50 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-5 xl:px-8">
+
+    <!-- Header -->
+    <div class="max-w-2xl mb-16">
+      <span class="eyebrow">Portafolio estratégico</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-navy leading-tight mb-4">
+        Proyectos que generan resultados medibles
+      </h2>
+      <p class="text-slate-500 text-base leading-relaxed">
+        No vendemos tecnología. Vendemos el tiempo que tus equipos recuperan y los errores que dejan de producirse.
+      </p>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="grid lg:grid-cols-2 gap-8">
+
+      <!-- Proyecto 1 -->
+      <div class="card-lift bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <!-- Top accent bar -->
+        <div class="h-1.5 bg-gradient-to-r from-brand to-brand-light"></div>
+        <div class="p-8">
+          <div class="flex items-start justify-between gap-4 mb-5">
+            <span class="inline-block bg-brand-pale text-brand text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              Gestión Educativa
+            </span>
+            <span class="text-slate-300 text-sm font-medium">01</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy mb-3">
+            Sistema Integral de Gestión para Centros Educativos
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-6">
+            Software centralizado que elimina el papeleo por completo. Gestión de roles de alumnos, profesores y administración desde un único panel. Control de matrículas, asistencia, facturación y comunicaciones en tiempo real. La dirección del centro recupera más de 10 horas semanales de trabajo administrativo.
+          </p>
+          <!-- Key results -->
+          <div class="grid grid-cols-3 gap-4 mb-7 py-5 border-y border-slate-100">
+            <div class="text-center">
+              <p class="text-xl font-extrabold text-brand">−80%</p>
+              <p class="text-xs text-slate-400 mt-0.5">Papeleo</p>
+            </div>
+            <div class="text-center">
+              <p class="text-xl font-extrabold text-brand">+10h</p>
+              <p class="text-xs text-slate-400 mt-0.5">Recuperadas/sem.</p>
+            </div>
+            <div class="text-center">
+              <p class="text-xl font-extrabold text-brand">1 panel</p>
+              <p class="text-xs text-slate-400 mt-0.5">Control total</p>
+            </div>
+          </div>
+          <a href="#contacto" class="inline-flex items-center gap-2 border border-brand text-brand text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-brand-pale transition-colors">
+            Solicitar Demo de este sistema
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="card-lift bg-white border border-slate-200 rounded-2xl overflow-hidden">
+        <div class="h-1.5 bg-gradient-to-r from-brand to-brand-light"></div>
+        <div class="p-8">
+          <div class="flex items-start justify-between gap-4 mb-5">
+            <span class="inline-block bg-brand-pale text-brand text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              Multiplataforma
+            </span>
+            <span class="text-slate-300 text-sm font-medium">02</span>
+          </div>
+          <h3 class="text-xl font-bold text-navy mb-3">
+            Aplicaciones Multiplataforma a Medida
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-6">
+            Soluciones nativas diseñadas para conectar los distintos procesos del negocio en una sola plataforma coherente. Web, escritorio o móvil según la necesidad operativa. Rendimiento optimizado, interfaces intuitivas y una arquitectura que crece contigo sin necesidad de rehacer el sistema.
+          </p>
+          <!-- Key results -->
+          <div class="grid grid-cols-3 gap-4 mb-7 py-5 border-y border-slate-100">
+            <div class="text-center">
+              <p class="text-xl font-extrabold text-brand">3-en-1</p>
+              <p class="text-xs text-slate-400 mt-0.5">Web · Desktop · Móvil</p>
+            </div>
+            <div class="text-center">
+              <p class="text-xl font-extrabold text-brand">100%</p>
+              <p class="text-xs text-slate-400 mt-0.5">Personalizable</p>
+            </div>
+            <div class="text-center">
+              <p class="text-xl font-extrabold text-brand">Escala</p>
+              <p class="text-xs text-slate-400 mt-0.5">Sin rediseño</p>
+            </div>
+          </div>
+          <a href="#contacto" class="inline-flex items-center gap-2 border border-brand text-brand text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-brand-pale transition-colors">
+            Saber más sobre este proyecto
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA banner bajo portafolio -->
+    <div class="mt-10 rounded-2xl bg-navy p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="text-white font-bold text-lg sm:text-xl">¿Tu empresa tiene un proceso que merece ser automatizado?</p>
+        <p class="text-slate-400 text-sm mt-1">Cuéntanoslo. La primera sesión de análisis es gratuita.</p>
+      </div>
+      <a href="#contacto" class="shrink-0 bg-white text-navy font-semibold text-sm px-6 py-3 rounded-lg hover:bg-slate-100 transition-colors shadow">
+        Solicitar Auditoría Gratuita
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════
+     5. TECNOLOGÍA
+════════════════════════════════════════════════════════ -->
+<section id="tecnologia" class="py-24 bg-white border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-5 xl:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Copy -->
+      <div>
+        <span class="eyebrow">Stack tecnológico</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy leading-tight mb-5">
+          Estándares de la industria.<br/>Sin compromisos.
+        </h2>
+        <p class="text-slate-500 text-base leading-relaxed mb-8">
+          Trabajamos exclusivamente con tecnologías consolidadas, probadas en entornos de producción a gran escala. Eso significa que tu software es mantenible, auditado y no depende de ningún proveedor en particular.
+        </p>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          Cada decisión técnica está tomada con el horizonte de 5–10 años en mente: que el sistema funcione igual de bien cuando tu empresa haya duplicado su tamaño.
+        </p>
+      </div>
+
+      <!-- Badges -->
+      <div>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg>
+            Java
+          </span>
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.59 8.2l-1.39-4.47-.3-.97-.5.87-1.46 2.55A8.9 8.9 0 0012 5a8.9 8.9 0 00-4.94 1.18L5.6 3.63l-.5-.87-.3.97L3.41 8.2A8.96 8.96 0 003 11c0 4.97 4.03 9 9 9s9-4.03 9-9c0-.97-.15-1.93-.41-2.8z"/></svg>
+            Spring Boot
+          </span>
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3.429 0L0 12h3.771L5.143 6l1.371 6h3.772l1.371-6 1.371 6h3.772L14.228 0h-3.771L9.086 6 7.714 0H3.43zm14.057 0l-3.429 12h3.772L19.2 6l1.371 6H24L20.571 0h-3.085z"/></svg>
+            Maven
+          </span>
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0C.055 17.207.161 15.747.246 14.28h1.032l1.35 4.093h.007l1.35-4.093h1.046c.1 1.72.206 3.18.24 4.415zm4.02-3.33c0 1.014-.243 1.64-.77 2.035-.44.328-.96.44-1.525.44-.42 0-.773-.05-1.06-.167V16.8c.3.14.64.193.979.193.65 0 1.04-.34 1.04-1.108v-.22h-.007c-.19.33-.547.5-.953.5-.9 0-1.4-.773-1.4-1.797 0-1.08.54-1.9 1.48-1.9.42 0 .72.18.9.507h.007v-.44h.96v3.03zm-1.04-1.567c0-.534-.24-.9-.65-.9-.44 0-.68.38-.68.9 0 .506.227.913.67.913.4 0 .66-.34.66-.913zm6.7-.36c.008.108.014.247.014.46V16.1h-.994v-2.234c0-.66-.22-.953-.647-.953-.374 0-.587.22-.714.56-.027.074-.04.18-.04.28V16.1h-.994V14.02c0-.427-.007-.753-.027-1.08h.867l.046.567h.02c.2-.333.554-.634 1.14-.634.734 0 1.33.5 1.33 1.567zm5.95 3.26h-.98l-.007-.433h-.02c-.22.327-.56.5-1.008.5-.893 0-1.44-.74-1.44-1.847 0-1.073.553-1.913 1.5-1.913.413 0 .72.16.9.44h.007v-2.08h.994v4.32zm-1-.587v-.547c0-.093-.007-.173-.02-.24-.073-.387-.32-.66-.68-.66-.494 0-.773.453-.773 1.02 0 .527.247.973.74.973.327 0 .593-.213.687-.54.013-.067.02-.147.02-.227h.027zm4.587-.253c0 .26-.047.573-.167.8-.207.433-.554.706-1.1.706-.467 0-.82-.173-1.04-.607h-.013V18.7h-1V13.6c0-.367-.014-.76-.027-1.1h.88l.047.514h.02c.24-.38.6-.58 1.06-.58.98 0 1.34.88 1.34 1.9zm-1 .053c0-.554-.167-.98-.594-.98-.334 0-.594.28-.674.634-.02.073-.027.173-.027.273v.327c0 .393.214.726.66.726.44 0 .634-.387.634-.98z"/></svg>
+            MySQL
+          </span>
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.608-.406-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+            Git / GitHub
+          </span>
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M11.0748 0C5.1175 0 .25 4.8555.25 10.8012c0 4.7745 3.1013 8.8305 7.4063 10.2582.5413.0993.7382-.2348.7382-.5218 0-.258-.0097-.9397-.0146-1.844-3.0132.6542-3.6508-1.4529-3.6508-1.4529-.4934-1.251-1.2041-1.5843-1.2041-1.5843-.9832-.6719.0744-.6583.0744-.6583 1.0873.0762 1.6597 1.1156 1.6597 1.1156.9663 1.6545 2.534 1.177 3.152.9003.098-.6996.3783-1.177.6875-1.4475-2.4055-.273-4.935-1.2005-4.935-5.3432 0-1.18.422-2.1452 1.1156-2.9026-.1121-.2734-.4836-1.372.1053-2.8605 0 0 .9101-.2911 2.9806 1.1108.8648-.2404 1.7925-.3602 2.7143-.3647.9218.0045 1.8495.1243 2.716.3647 2.069-1.4019 2.978-1.1108 2.978-1.1108.5908 1.4885.2194 2.5871.1072 2.8605.6955.7574 1.1137 1.7225 1.1137 2.9026 0 4.153-2.5332 5.068-4.9462 5.334.3889.3345.7352 1.0011.7352 2.0174 0 1.4563-.0136 2.63-.0136 2.9878 0 .2893.1959.6263.7429.52C20.7011 19.6247 23.75 15.576 23.75 10.8012 23.75 4.8555 18.8834 0 11.0748 0"/></svg>
+            REST APIs
+          </span>
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 1.5h21v21h-21z" fill="none"/><path d="M13 3H4v18h16V9l-7-6zm0 2.121L17.879 9H13V5.121zM6 19V5h5v6h6v8H6z"/></svg>
+            Documentación técnica
+          </span>
+          <span class="tech-badge">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            CI/CD & Despliegue
+          </span>
+        </div>
+
+        <!-- Trust note -->
+        <p class="mt-8 text-slate-400 text-xs leading-relaxed border-l-2 border-brand-pale pl-4">
+          Ninguna tecnología exótica. Ningún framework del que nadie ha oído hablar en dos años. Elegimos herramientas con ecosistemas maduros porque eso protege tu inversión a largo plazo.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════
+     6. CONTACTO / CTA FINAL
+════════════════════════════════════════════════════════ -->
+<section id="contacto" class="py-24 bg-slate-50 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-5 xl:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Copy lado izquierdo -->
+      <div class="lg:sticky lg:top-28">
+        <span class="eyebrow">Consultoría gratuita</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy leading-tight mb-5">
+          La primera sesión de análisis no te cuesta nada.<br/>
+          <span class="text-brand">Perder tiempo sí.</span>
+        </h2>
+        <p class="text-slate-500 text-base leading-relaxed mb-8">
+          En una reunión de 45 minutos analizamos tus procesos actuales, identificamos los cuellos de botella y te presentamos un plan de acción concreto. Sin compromiso de compra.
+        </p>
+
+        <!-- Canales de contacto -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 text-sm text-slate-600">
+            <span class="w-10 h-10 bg-brand-pale rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-semibold text-navy">Correo profesional</p>
+              <a href="mailto:contacto@zpsoftware.es" class="text-brand hover:underline">contacto@zpsoftware.es</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-sm text-slate-600">
+            <span class="w-10 h-10 bg-brand-pale rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-semibold text-navy">WhatsApp / Teléfono</p>
+              <a href="tel:+34600000000" class="text-brand hover:underline">+34 600 000 000</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-sm text-slate-600">
+            <span class="w-10 h-10 bg-brand-pale rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-semibold text-navy">LinkedIn</p>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-brand hover:underline">linkedin.com/in/zpsoftwaresolutions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+        <h3 class="text-lg font-bold text-navy mb-1">Solicita tu Auditoría Inicial</h3>
+        <p class="text-slate-400 text-sm mb-7">Rellena el formulario y te contactamos en menos de 24 horas.</p>
+
+        <div class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nombre *</label>
+              <input type="text" placeholder="Tu nombre" class="form-input" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Empresa *</label>
+              <input type="text" placeholder="Nombre de tu empresa" class="form-input" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Correo electrónico *</label>
+            <input type="email" placeholder="correo@tuempresa.com" class="form-input" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">¿Cuál es tu principal problema operativo? *</label>
+            <textarea rows="4" placeholder="Describe brevemente el proceso que quieres automatizar o el problema que necesitas resolver..." class="form-input resize-none"></textarea>
+          </div>
+          <!-- Privacidad -->
+          <div class="flex items-start gap-3 text-xs text-slate-400">
+            <input type="checkbox" id="privacy" class="mt-0.5 accent-brand shrink-0" />
+            <label for="privacy">Acepto que mis datos sean utilizados para contactarme con información sobre los servicios. No se compartirán con terceros.</label>
+          </div>
+          <!-- Submit -->
+          <button type="submit" class="w-full bg-brand text-white font-semibold text-sm px-6 py-3.5 rounded-lg hover:bg-brand-light transition-colors flex items-center justify-center gap-2 shadow-md shadow-blue-200">
+            Enviar solicitud — Es gratuito
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+            </svg>
+          </button>
+          <p class="text-center text-xs text-slate-400">Sin coste. Sin compromiso. Respuesta en &lt; 24h.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════
+     7. FOOTER
+════════════════════════════════════════════════════════ -->
+<footer class="bg-navy text-slate-400">
+  <div class="max-w-7xl mx-auto px-5 xl:px-8 py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
+            </svg>
+          </span>
+          <span class="text-white font-extrabold text-base tracking-tight">ZP<span class="text-brand-light"> Software Solutions</span></span>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">
+          Desarrollo de software a medida para empresas, academias y negocios locales que quieren dejar de perder tiempo en procesos manuales.
+        </p>
+        <!-- Social -->
+        <div class="flex gap-3 mt-6">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-brand transition-colors flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-brand transition-colors flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <p class="text-white text-sm font-semibold mb-4">Navegación</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#servicios"  class="hover:text-white transition-colors">Servicios</a></li>
+          <li><a href="#portfolio"  class="hover:text-white transition-colors">Casos de Éxito</a></li>
+          <li><a href="#tecnologia" class="hover:text-white transition-colors">Tecnología</a></li>
+          <li><a href="#contacto"   class="hover:text-white transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <p class="text-white text-sm font-semibold mb-4">Legal</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Aviso Legal</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Política de Privacidad</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Política de Cookies</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Términos de Servicio</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-navy-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>© 2026 ZP Software Solutions. Todos los derechos reservados.</p>
+      <p class="text-slate-600">Diseñado y desarrollado con <span class="text-brand-light">♥</span> en España.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- App Script -->
+<script src="js/app.js"></script>
+
+</body>
+</html>

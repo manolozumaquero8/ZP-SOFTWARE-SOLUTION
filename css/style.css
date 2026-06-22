@@ -1,0 +1,94 @@
+/* ─── Base ─────────────────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* ─── Navbar glass blur ─────────────────────────────── */
+#navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(248, 250, 252, 0.92);
+  transition: box-shadow 0.3s ease;
+}
+#navbar.scrolled {
+  box-shadow: 0 1px 0 0 #e2e8f0;
+}
+
+/* ─── Hero diagonal accent ──────────────────────────── */
+.hero-accent {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f8fafc 60%, #dbeafe 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+  z-index: 0;
+}
+
+/* ─── Card hover lift ───────────────────────────────── */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.10);
+}
+
+/* ─── Tech badge ────────────────────────────────────── */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, border-color 0.2s;
+}
+.tech-badge:hover {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
+
+/* ─── Section label eyebrow ─────────────────────────── */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+/* ─── Form inputs ───────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+/* ─── Mobile menu toggle ────────────────────────────── */
+#mobile-menu {
+  display: none;
+}
+#mobile-menu.open {
+  display: block;
+}
